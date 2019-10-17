@@ -1,11 +1,31 @@
-function addNumber(){
-    var a=parseFloat(document.getElementById('firstnumber').value);
-    var b=parseFloat(document.getElementById('secondname').value);
-    document.getElementById('total').value=a+b;
-    if(isNaN(a)){
-        alert('enter the valid number in fisrt box');
-    }
-      if(isNaN(b)){
-        alert('enter the valid number in second box');
-      }
-}
+var oddButton=document.getElementById('odd');
+var evenButton=document.getElementById('even');
+var oddLi=document.querySelectorAll('li:nth-child(odd)');
+var evenLi=document.querySelectorAll('li:nth-child(even)');
+
+  oddButton.addEventListener('mouseenter',()=>{
+      console.log('oddentered');
+      
+    
+    oddLi.forEach(y=>
+        {
+            y.classList.add('odd');
+        });
+        evenLi.forEach(x =>{
+            x.classList.remove('even');
+        });
+});
+ evenButton.addEventListener('mouseenter',()=>{
+    console.log('even entered');
+    
+ evenLi.forEach(x =>
+     {
+        x.classList.add('even');
+     
+     });
+  
+     oddLi.forEach(y =>{
+         y.classList.remove('odd');
+        
+    });
+});
